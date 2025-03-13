@@ -1,0 +1,77 @@
+from machine import Pin, ADC, SoftI2C  # Usamos SoftI2C en lugar de I2C
+import time
+import dht
+import math
+import urequests
+
+# Configuración de pines
+sensor_luz = Pin(16, Pin.IN)  # Sensor de luz
+sensor_sonido = ADC(Pin(34))  # Sensor de sonido (usando pin analógico 34)
+sensor_sonido.atten(ADC.ATTN_0DB)  # Configurar para leer valores de 0 a 1.1V
+sensor_dht = dht.DHT11(Pin(17))  # Sensor DHT11
+
+# Configuración de I2C para el sensor BMP280
+i2c = SoftI2C(scl=Pin(22), sda=Pin(21))  # Usamos SoftI2C con los pines adecuados
+BMP280_ADDR = 0x76  # Dirección I2C del BMP280
+
+# Registros del BMP280
+BMP280_REG_PRESS = 0xF7  # Solo usaremos el registro de presión
+
+# URL de tu Web App de Google Sheets
+url = "https://script.google.com/macros/s/AKfycbwaC9eqE2oKx-XA1bqRFo5v4O7H7X_MsYhY2hZlsQx1ZNh4Oo5YoYCMYmfYywcQMG7H/exec"
+
+# Función para leer un dato de un registro
+def read_register(register, length=1):
+    data = i2c.readfrom_mem(BMP280_ADDR, register, length)
+    return data
+
+# Función para obtener la presión
+def read_pressure():
+    data = read_register(BMP280_REG_PRESS, 3)
+    raw_press = (data[0] << 12) | (data[1] << 4) | (data[2] >> 4)
+    press = raw_press / 256.0  # Esto está en Pa (Pascal)
+    return press
+
+# Función para leer la luz
+def leer_luz():
+    return sensor_luz.value()
+
+# Función para leer sonido y convertirlo a decibelios
+def leer_sonido():
+    valor_analogico = sensor_sonido.read()
+    return valor_analogico  # Devolvemos el valor crudo del sensor
+
+# Función para leer el DHT11
+def leer_dht11():
+    try:
+        sensor_dht.measure()
+        return sensor_dht.temperature(), sensor_dht.humidity()
+    except OSError as e:
+        print("Error al leer el DHT11:", e)
+        return None, None
+
+# Función para enviar los datos a Google Sheets
+def enviar_datos(luz, sonido, temperatura, humedad, presion):
+    payload = f"luz={luz}&sonido={sonido}&temperatura={temperatura}&humedad={humedad}&presion={presion}"
+    
+    try:
+        response = urequests.post(url, data=payload, headers={'Content-Type': 'application/x-www-form-urlencoded'})
+        response.close()
+        print("Datos enviados")  # Solo muestra este mensaje
+    except Exception as e:
+        print("Error al enviar datos:", e)
+
+# Bucle principal
+while True:
+    luz = leer_luz()
+    sonido_crudo = leer_sonido()
+    temperatura, humedad = leer_dht11()
+    presion_bmp = read_pressure()
+
+    # Mostramos los valores en el terminal
+    print(f"Luz: {luz}, Sonido (crudo): {sonido_crudo}, Temp: {temperatura}°C, Humedad: {humedad}%, Presión: {presion_bmp} Pa")
+
+    if temperatura is not None and humedad is not None:
+        enviar_datos(luz, sonido_crudo, temperatura, humedad, presion_bmp)
+
+    time.sleep(10)
