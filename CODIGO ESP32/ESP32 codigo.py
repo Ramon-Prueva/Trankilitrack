@@ -6,8 +6,8 @@ import neopixel
 import urequests as requests
 import network
 
-SSID = "DIGIFIBRA-F5Sd"
-PASSWORD = "fsGtyfYQbU5N"
+SSID = ""
+PASSWORD = ""
 
 def conectar_wifi():
     wlan = network.WLAN(network.STA_IF)
