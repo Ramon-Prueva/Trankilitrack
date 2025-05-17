@@ -1,0 +1,187 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.filter-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sensor-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    margin-top: 50px;
+}
+
+.sensor-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sensor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sensor-title {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.sensor-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.sensor-unit {
+    font-size: 16px;
+    color: #777;
+}
+
+.alert {
+    color: #e53935;
+    font-weight: bold;
+}
+
+.normal {
+    color: #43a047;
+}
+
+.last-update {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    background-color: rgba(0, 123, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+    font-style: normal;
+}
+
+.last-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.last-update #update-time {
+    font-weight: bold;
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.chart-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.chart-controls input {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.chart-controls label {
+    font-size: 14px;
+    color: #555;
+}
+
+.sensor-card canvas {
+    width: 100% !important;
+    height: 400px !important;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode h1, 
+.dark-mode h2 {
+    color: #ffffff;
+}
+
+.dark-mode .sensor-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .sensor-title {
+    color: #bbbbbb;
+}
+
+.dark-mode .sensor-value {
+    color: #4dabf7;
+}
+
+.dark-mode .sensor-unit {
+    color: #999999;
+}
+
+.dark-mode .chart-controls input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #ffffff;
+}
+
+.dark-mode .chart-controls label {
+    color: #bbbbbb;
+}
+
+.dark-mode .sensor-card canvas {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark-mode .last-update {
+    background-color: rgba(77, 171, 247, 0.2);
+    color: #e0e0e0;
+    border-color: rgba(77, 171, 247, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .last-update:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode .last-update #update-time {
+    color: #4dabf7;
+}
+
+
+body, 
+.sensor-card, 
+.sensor-title, 
+.sensor-value, 
+.sensor-unit, 
+.chart-controls input,
+.chart-controls label {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

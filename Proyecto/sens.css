@@ -1,0 +1,138 @@
+body {
+    background-color: #f8f9fa; 
+}
+
+.container {
+    background-color: transparent; 
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.sensor-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.sensor-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.sensor-value {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.sensor-unit {
+    font-size: 1rem;
+    color: #666;
+}
+.chart-controls {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    align-items: center;
+}
+.chart-controls input {
+    width: 60px;
+    padding: 5px;
+}
+#historical-section {
+    display: none;
+}
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+footer section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1.5rem;
+    padding: 0 15px;
+}
+
+footer h4 {
+    color: #f8f9fa;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer p {
+    color: #adb5bd;
+    line-height: 1.6;
+}
+
+footer hr {
+    border-color: #495057;
+    margin: 1rem auto;
+    max-width: 1200px;
+}
+
+#copyright {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+#copyright p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
