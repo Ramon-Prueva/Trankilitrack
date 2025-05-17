@@ -1,0 +1,55 @@
+https://q9tc99n1-80.uks1.devtunnels.ms/
+
+https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_grid_stacked_to_hor&stacked=h
+
+
+  <footer>
+    <div class="footer-content">
+      <section id="about">
+        <h4>Sobre la pagina</h4>
+        <p>Gestiona tus videojuegos es una plataforma dedicada a ayudarte a organizar y seguir tu colección de juegos a través de diferentes plataformas.</p>
+      </section>
+
+      <section id="quick-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="#">Acerca de mi</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="https://docs.google.com/forms/d/1shHcbGMn2WmnRFs81c_SEoxzHaxlWe_kmy68mIzT-XU/edit" target="_blank">Ayuda</a></li>
+          <li><a href="politicasDePrivacidad.html">Política de Privacidad</a></li>
+        </ul>
+      </section>
+
+      <section id="platforms">
+        <h4>Plataformas</h4>
+        <ul>
+          <li><a href="https://www.nintendo.com/es-es/">Nintendo</a></li>
+          <li><a href="https://www.xbox.com/es-ES">Xbox</a></li>
+          <li><a href="https://www.playstation.com/es-es/">PlayStation</a></li>
+          <li><a href="https://store.steampowered.com/?l=spanish">PC Gaming (Steam)</a></li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h4>Contacto</h4>
+        <ul>
+          <li>Email: <a href="mailto:mflores@institutmvm.cat">mflores@institutmvm.cat</a></li>
+          <li>Tel: 933 81 90 05</li>
+          <li>Redes Sociales: 
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2Fi%2Fflow%2Flogin" target="_blank" title="Twitter">🐦</a> 
+            <a href="https://www.facebook.com/institutmvm/?locale=ca_ES" target="_blank" title="Facebook">📘</a> 
+            <a href="https://www.instagram.com/institutmvm/?hl=es" target="_blank" title="Instagram">📸</a> 
+            <a href="contacto.html" title="Contacto">💬</a>
+          </li>          
+        </ul>
+      </section>
+    </div>
+    <hr>
+    <section id="copyright">
+      <p>© 2024-2025 Gestión de Videojuegos. Todos los derechos reservados.</p>
+    </section>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
