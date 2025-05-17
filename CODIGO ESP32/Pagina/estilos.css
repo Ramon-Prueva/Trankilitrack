@@ -1,0 +1,93 @@
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+.filter-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.sensor-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    margin-top: 50px;
+}
+
+.sensor-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sensor-title {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.sensor-value {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.sensor-unit {
+    font-size: 16px;
+    color: #777;
+}
+
+.alert {
+    color: #e53935;
+    font-weight: bold;
+}
+
+.normal {
+    color: #43a047;
+}
+
+.last-update {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-style: italic;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.chart-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.chart-controls input {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.chart-controls label {
+    font-size: 14px;
+}
+
+.sensor-card canvas {
+    width: 100% !important;
+    height: 400px !important;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+}
